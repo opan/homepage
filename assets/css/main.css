@@ -60,6 +60,7 @@ h2 a:hover { color: var(--accent); }
   gap: 1.25rem;
   margin-top: 4rem;
   padding: 1.5rem 0 2.5rem;
+  align-items: center;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.9rem;
@@ -69,9 +70,12 @@ h2 a:hover { color: var(--accent); }
 /* Home intro */
 .intro { display: flex; gap: 1.25rem; align-items: flex-start; }
 .intro p:first-child { margin-top: 0; }
-.social { display: flex; gap: 1rem; margin: 0; font-size: 0.95rem; }
-.social a { text-decoration: none; }
-.social a:hover { text-decoration: underline; }
+.social { display: flex; gap: 1rem; align-items: center; margin: 0; }
+.social a { display: inline-flex; color: var(--muted); }
+.social a:hover { color: var(--fg); }
+.social svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+.site-footer .social { gap: 0.9rem; }
+.site-footer .social svg { width: 1rem; height: 1rem; }
 .avatar { flex: none; width: 96px; height: 96px; border-radius: 50%; }
 @media (max-width: 30rem) {
   .intro { flex-direction: column; }

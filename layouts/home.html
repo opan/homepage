@@ -6,10 +6,7 @@
   {{ end }}
   <div>
     {{ .Content }}
-    <p class="social">
-      {{ with site.Params.github }}<a href="https://github.com/{{ . }}">GitHub</a>{{ end }}
-      {{ with site.Params.x }}<a href="https://x.com/{{ . }}">X (@{{ . }})</a>{{ end }}
-    </p>
+    <p class="social">{{ partial "social.html" . }}</p>
   </div>
 </section>
 

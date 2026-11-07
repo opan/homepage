@@ -25,8 +25,7 @@
   </main>
   <footer class="site-footer">
     <span>© {{ now.Year }} {{ site.Title }}</span>
-    {{ with site.Params.github }}<a href="https://github.com/{{ . }}">GitHub</a>{{ end }}
-    {{ with site.Params.x }}<a href="https://x.com/{{ . }}">X</a>{{ end }}
+    <span class="social">{{ partial "social.html" . }}</span>
     <a href="{{ "posts/index.xml" | relURL }}">RSS</a>
   </footer>
 </body>
