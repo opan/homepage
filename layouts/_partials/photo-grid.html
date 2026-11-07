@@ -1,0 +1,12 @@
+{{/* Context: a slice of image resources. */}}
+<ul class="photo-grid">
+  {{ range . }}
+  {{ $thumb := .Fill "600x600 webp" }}
+  {{ $full := .Fit "2000x2000 webp" }}
+  <li>
+    <a href="{{ $full.RelPermalink }}">
+      <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ .Title }}" loading="lazy">
+    </a>
+  </li>
+  {{ end }}
+</ul>

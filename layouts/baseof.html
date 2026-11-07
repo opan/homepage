@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ with (site.GetPage "/posts").OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">{{ end }}
+  {{ $css := slice (resources.Get "css/main.css") (resources.Get "css/syntax.css") | resources.Concat "css/site.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ partial "opengraph.html" . }}
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+    <nav>
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="site-footer">
+    <span>© {{ now.Year }} {{ site.Title }}</span>
+    {{ with site.Params.github }}<a href="https://github.com/{{ . }}">GitHub</a>{{ end }}
+    <a href="{{ "posts/index.xml" | relURL }}">RSS</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+baseURL = 'https://opanmustopah.com/'
+locale = 'en'
+title = 'Opan Mustopah'
+disableKinds = ['taxonomy', 'term']
+enableRobotsTXT = true
+
+[params]
+  description = 'Software engineer. I write about Go, my homelab, and the small apps I build.'
+  github = 'opan'
+
+[menus]
+  [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 10
+  [[menus.main]]
+    name = 'Projects'
+    pageRef = '/projects'
+    weight = 20
+  [[menus.main]]
+    name = 'Photos'
+    pageRef = '/photos'
+    weight = 30
+
+[outputs]
+  home = ['html']
+  section = ['html', 'rss']
+
+[markup.highlight]
+  noClasses = false
+
+[imaging]
+  [imaging.webp]
+    quality = 82
+
+# Only publish the resized images the templates generate, not the originals.
+[[cascade]]
+  [cascade.build]
+    publishResources = false
+  [cascade.target]
+    path = '{/projects/**,/photos}'

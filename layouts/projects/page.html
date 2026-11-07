@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article>
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    <p class="tagline">{{ .Params.tagline }}</p>
+    <p class="actions">
+      {{ with .Params.live }}<a class="button" href="{{ . }}">Try it →</a>{{ end }}
+      {{ with .Params.repo }}<a class="button secondary" href="{{ . }}">Source on GitHub</a>{{ end }}
+    </p>
+    {{ with .Params.stack }}<p class="muted">Built with {{ delimit . ", " " and " }}.</p>{{ end }}
+  </header>
+  {{ with .Resources.GetMatch "cover.*" }}
+    {{ $c := .Resize "1280x webp" }}
+    <img class="cover" src="{{ $c.RelPermalink }}" width="{{ $c.Width }}" height="{{ $c.Height }}" alt="Screenshot of {{ $.Title }}">
+  {{ end }}
+  <div class="prose">{{ .Content }}</div>
+</article>
+{{ end }}

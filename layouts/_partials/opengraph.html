@@ -1,0 +1,6 @@
+<meta property="og:title" content="{{ .Title | default site.Title }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+{{ $img := "" }}
+{{ with .Resources.GetMatch "cover.*" }}{{ $img = . }}{{ else }}{{ $img = resources.Get "images/avatar.jpg" }}{{ end }}
+{{ with $img }}<meta property="og:image" content="{{ (.Fill "1200x630 webp").Permalink }}">{{ end }}

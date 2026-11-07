@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ with .Resources.ByType "image" }}
+  {{ partial "photo-grid.html" . }}
+{{ else }}
+  <p class="muted">No photos yet.</p>
+{{ end }}
+{{ end }}

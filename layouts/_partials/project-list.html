@@ -1,0 +1,14 @@
+<ul class="project-list">
+  {{ range . }}
+  <li>
+    <a href="{{ .RelPermalink }}">
+      {{ with .Resources.GetMatch "cover.*" }}
+        {{ $t := .Fill "480x300 webp top" }}
+        <img src="{{ $t.RelPermalink }}" width="{{ $t.Width }}" height="{{ $t.Height }}" alt="" loading="lazy">
+      {{ end }}
+      <strong>{{ .Title }}</strong>
+      <span>{{ .Params.tagline }}</span>
+    </a>
+  </li>
+  {{ end }}
+</ul>
