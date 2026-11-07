@@ -16,13 +16,4 @@
   <h2><a href="{{ "projects/" | relURL }}">Projects</a></h2>
   {{ partial "project-list.html" (where site.RegularPages "Section" "projects").ByWeight }}
 </section>
-
-{{ with site.GetPage "/photos" }}
-  {{ with first 6 (.Resources.ByType "image") }}
-  <section>
-    <h2><a href="{{ "photos/" | relURL }}">Photos</a></h2>
-    {{ partial "photo-grid.html" . }}
-  </section>
-  {{ end }}
-{{ end }}
 {{ end }}

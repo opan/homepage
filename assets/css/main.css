@@ -124,17 +124,6 @@ h2 a:hover { color: var(--accent); }
 .button.secondary { background: transparent; color: var(--accent); }
 .cover { display: block; border: 1px solid var(--line); border-radius: 8px; }
 
-/* Photos */
-.photo-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
-  gap: 0.5rem;
-}
-.photo-grid img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
-
 /* Post body */
 .prose img { border-radius: 6px; }
 .prose figure { margin: 1.5rem 0; }

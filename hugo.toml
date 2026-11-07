@@ -17,10 +17,6 @@ enableRobotsTXT = true
     name = 'Projects'
     pageRef = '/projects'
     weight = 20
-  [[menus.main]]
-    name = 'Photos'
-    pageRef = '/photos'
-    weight = 30
 
 [outputs]
   home = ['html']
@@ -38,4 +34,4 @@ enableRobotsTXT = true
   [cascade.build]
     publishResources = false
   [cascade.target]
-    path = '{/projects/**,/photos}'
+    path = '/projects/**'
