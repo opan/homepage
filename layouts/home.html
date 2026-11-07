@@ -4,7 +4,13 @@
     {{ $a := .Fill "192x192 webp" }}
     <img class="avatar" src="{{ $a.RelPermalink }}" width="96" height="96" alt="{{ site.Title }}">
   {{ end }}
-  <div>{{ .Content }}</div>
+  <div>
+    {{ .Content }}
+    <p class="social">
+      {{ with site.Params.github }}<a href="https://github.com/{{ . }}">GitHub</a>{{ end }}
+      {{ with site.Params.x }}<a href="https://x.com/{{ . }}">X (@{{ . }})</a>{{ end }}
+    </p>
+  </div>
 </section>
 
 <section>

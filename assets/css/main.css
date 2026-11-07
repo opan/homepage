@@ -69,6 +69,9 @@ h2 a:hover { color: var(--accent); }
 /* Home intro */
 .intro { display: flex; gap: 1.25rem; align-items: flex-start; }
 .intro p:first-child { margin-top: 0; }
+.social { display: flex; gap: 1rem; margin: 0; font-size: 0.95rem; }
+.social a { text-decoration: none; }
+.social a:hover { text-decoration: underline; }
 .avatar { flex: none; width: 96px; height: 96px; border-radius: 50%; }
 @media (max-width: 30rem) {
   .intro { flex-direction: column; }

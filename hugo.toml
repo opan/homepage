@@ -7,6 +7,7 @@ enableRobotsTXT = true
 [params]
   description = 'Software engineer. I write about Go, my homelab, and the small apps I build.'
   github = 'opan'
+  x = 'opan_mustopah'
 
 [menus]
   [[menus.main]]
