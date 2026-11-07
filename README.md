@@ -30,3 +30,13 @@ hugo --gc --minify    # build into public/
 | `layouts/projects/` | project cards and pages |
 | `assets/css/main.css` | all styles; light/dark via `prefers-color-scheme` |
 | `assets/css/syntax.css` | code highlighting, from `hugo gen chromastyles` |
+
+## Deploy
+
+`.github/workflows/deploy.yml` builds the site on every push and pull request,
+and on pushes to `main` deploys `public/` to a Cloudflare Worker with static
+assets (`wrangler.jsonc`). Deploying needs two repository secrets:
+`CLOUDFLARE_API_TOKEN` (from the "Edit Cloudflare Workers" token template) and
+`CLOUDFLARE_ACCOUNT_ID`. Without them the workflow only builds.
+
+Hugo and Wrangler versions are pinned in the workflow's `env`; bump them there.

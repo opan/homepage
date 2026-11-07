@@ -1,0 +1,11 @@
+// Cloudflare Worker that serves the Hugo build output as static assets.
+// Deployed by .github/workflows/deploy.yml; the custom domain is attached in the dashboard.
+{
+  "name": "homepage",
+  "compatibility_date": "2026-11-07",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
