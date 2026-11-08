@@ -7,6 +7,7 @@ enableRobotsTXT = true
 [params]
   description = 'Software engineer. I write about Go, my homelab, and the small apps I build.'
   github = 'opan'
+  linkedin = 'opanmustopah'
   x = 'opan_mustopah'
 
   # Contact address, split so the built pages never contain it whole (see _partials/contact-link.html).
