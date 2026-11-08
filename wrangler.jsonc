@@ -1,8 +1,13 @@
 // Cloudflare Worker that serves the Hugo build output as static assets.
-// Deployed by .github/workflows/deploy.yml; the custom domain is attached in the dashboard.
+// Deployed by .github/workflows/deploy.yml, which also attaches the custom domain
+// (Cloudflare creates its DNS record and certificate). No workers.dev address.
 {
   "name": "homepage",
   "compatibility_date": "2026-11-07",
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "opanmustopah.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page",

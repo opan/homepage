@@ -35,7 +35,7 @@ hugo --gc --minify    # build into public/
 
 `.github/workflows/deploy.yml` builds the site on every push and pull request,
 and on pushes to `main` deploys `public/` to a Cloudflare Worker with static
-assets (`wrangler.jsonc`). Deploying needs two repository secrets:
+assets (`wrangler.jsonc`), served on opanmustopah.com. Deploying needs two repository secrets:
 `CLOUDFLARE_API_TOKEN` (from the "Edit Cloudflare Workers" token template) and
 `CLOUDFLARE_ACCOUNT_ID`. Without them the workflow only builds.
 
