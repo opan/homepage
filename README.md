@@ -19,6 +19,7 @@ hugo --gc --minify    # build into public/
 - **Project:** add `content/projects/<name>/index.md` with `title`, `tagline`,
   `weight` (order), `live`, `repo`, `stack`, and a `cover.png` screenshot.
 - **About text:** `content/_index.md`. Avatar: `assets/images/avatar.jpg`.
+- **Contact address:** `[params.contact]` in `hugo.toml` (forwarded by Cloudflare Email Routing).
 
 ## Layout
 

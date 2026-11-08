@@ -1,0 +1,5 @@
+{{/* A mailto link assembled in the browser, so the page source holds no complete address for scrapers.
+     Context: dict "class" "text". Hidden without JavaScript. */}}
+{{ with site.Params.contact }}
+<a class="contact-link {{ $.class }}" href="#" data-user="{{ .user }}" data-domain="{{ .domain }}" data-subject="{{ .subject }}">{{ $.text }}</a>
+{{ end }}

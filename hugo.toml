@@ -9,6 +9,12 @@ enableRobotsTXT = true
   github = 'opan'
   x = 'opan_mustopah'
 
+  # Contact address, split so the built pages never contain it whole (see _partials/contact-link.html).
+  [params.contact]
+    user = 'hello'
+    domain = 'opanmustopah.com'
+    subject = 'Hello from opanmustopah.com'
+
 [menus]
   [[menus.main]]
     name = 'Posts'

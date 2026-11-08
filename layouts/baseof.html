@@ -39,8 +39,15 @@
   </main>
   <footer class="site-footer">
     <span>© {{ now.Year }} {{ site.Title }}</span>
+    {{ partial "contact-link.html" (dict "class" "" "text" "Contact") }}
     <span class="social">{{ partial "social.html" . }}</span>
     <a href="{{ "posts/index.xml" | relURL }}">RSS</a>
   </footer>
+  <script>
+    document.querySelectorAll(".contact-link").forEach(function (a) {
+      a.href = "mailto:" + a.dataset.user + "@" + a.dataset.domain +
+        (a.dataset.subject ? "?subject=" + encodeURIComponent(a.dataset.subject) : "");
+    });
+  </script>
 </body>
 </html>

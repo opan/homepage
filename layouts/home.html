@@ -6,7 +6,10 @@
   {{ end }}
   <div>
     {{ .Content }}
-    <p class="social">{{ partial "social.html" . }}</p>
+    <p class="social">
+      {{ partial "contact-link.html" (dict "class" "button small" "text" "Get in touch") }}
+      {{ partial "social.html" . }}
+    </p>
   </div>
 </section>
 

@@ -103,8 +103,8 @@ h2 a:hover { color: var(--accent); }
 .intro { display: flex; gap: 1.25rem; align-items: flex-start; }
 .intro p:first-child { margin-top: 0; }
 .social { display: flex; gap: 1rem; align-items: center; margin: 0; }
-.social a { display: inline-flex; color: var(--muted); }
-.social a:hover { color: var(--fg); }
+.social a:not(.button) { display: inline-flex; color: var(--muted); }
+.social a:not(.button):hover { color: var(--fg); }
 .social svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
 .site-footer .social { gap: 0.9rem; }
 .site-footer .social svg { width: 1rem; height: 1rem; }
@@ -161,6 +161,9 @@ h2 a:hover { color: var(--accent); }
   text-decoration: none;
 }
 .button.secondary { background: transparent; color: var(--accent); }
+.button.small { padding: 0.3rem 0.85rem; font-size: 0.925rem; }
+.contact-link { display: none; }
+.js .contact-link { display: inline-block; }
 .cover { display: block; border: 1px solid var(--line); border-radius: 8px; }
 
 .status-cat { display: block; margin: 1.5rem 0; border-radius: 8px; }
